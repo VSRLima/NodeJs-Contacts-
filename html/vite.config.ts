@@ -7,8 +7,7 @@ export default defineConfig(({ command, mode }) => {
   const env = loadEnv(mode, process.cwd(), '');
   const localApiUrl = `http://127.0.0.1:${env.PORT ?? '3000'}`;
   const configuredApiUrl = env.VITE_API_BASE_URL ?? env.API_BASE_URL ?? '';
-  const apiBaseUrl =
-    configuredApiUrl || (command === 'serve' ? localApiUrl : '');
+  const apiBaseUrl = configuredApiUrl || (command === 'serve' ? localApiUrl : '');
   const apiProxyTarget = env.API_PROXY_TARGET ?? apiBaseUrl ?? localApiUrl;
 
   return {

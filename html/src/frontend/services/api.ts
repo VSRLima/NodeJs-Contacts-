@@ -57,7 +57,7 @@ const getApiBaseUrl = (): string => {
 };
 
 const API_BASE_URL = getApiBaseUrl();
-const apiUrl = (path: string) => API_BASE_URL ? `${API_BASE_URL}${path}` : path;
+const apiUrl = (path: string) => (API_BASE_URL ? `${API_BASE_URL}${path}` : path);
 
 export class ApiError extends Error {
   constructor(
